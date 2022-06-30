@@ -1,0 +1,9 @@
+services:
+  dev-db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456@Aa
+      POSTGRES_DB: medianDatabase
