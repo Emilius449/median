@@ -1,16 +1,16 @@
-# Generate Nest Js Project
+## Generate Nest Js Project
 
 ```bash
 $ nest new median
 ```
 
-# cd into project
+## cd into project
 
 ```bash
 $ cd median
 ```
 
-# Configuration
+## Configuration
 
 ```bash
 $ npm i --save @nestjs/config
@@ -25,7 +25,7 @@ in app.module.ts => imports
   ],
 ```
 
-# Add Database (I'm using docker and postgres as database)
+## Add Database (I'm using docker and postgres as database)
 
 - Get docker postgres image
 
@@ -39,7 +39,7 @@ services:
       - 5432:5432
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123456@Aa
+      POSTGRES_PASSWORD: passwordMy
       POSTGRES_DB: medianDatabase
 ```
 
@@ -52,28 +52,28 @@ $ docker compose up -d
 - Configure Environment variables
 
 ```env
-DATABASE_URL=""
+DATABASE_URL="postgresql://postgres:passwordMy@localhost:5432/medianDatabase?schema=public"
 ```
 
-# Install Prisma
+## Install Prisma
 
 ```bash
 $ npm install prisma --save-dev
 ```
 
-## Install Prisma Client (optinal)
+### Install Prisma Client (optinal)
 
 ```bash
 $ npm install @prisma/client
 ```
 
-## Generate Prisma folder
+### Generate Prisma folder
 
 ```bash
 $ npx prisma init
 ```
 
-## Declare Prisma Model in schema.prisma file
+### Declare Prisma Model in schema.prisma file
 
 example
 
@@ -92,13 +92,13 @@ model Article {
 
 ```
 
-## Generate Prisma migration
+### Generate Prisma migration
 
 ```bash
 $ npx prisma migrate dev --name "init"
 ```
 
-## Seed the database
+### Seed the database
 
 - Create seed file (seed.ts) in prisma folder
 
@@ -150,7 +150,7 @@ main()
   });
 ```
 
-## Tell Prisma what script to execute when running the seeding command.
+### Tell Prisma what script to execute when running the seeding command.
 
 - Adding the prisma.seed key to the end of your package.json
 
@@ -168,7 +168,7 @@ main()
 $ npx prisma db seed
 ```
 
-## Generate prisma module and service
+### Generate prisma module and service
 
 ```bash
 $ npx nest generate module prisma
@@ -207,7 +207,7 @@ import { PrismaService } from './prisma.service';
 export class PrismaModule {}
 ```
 
-# Set up Swagger
+## Set up Swagger
 
 - Install the required dependencies
 
@@ -243,7 +243,7 @@ bootstrap();
 
 - Open the [Swagger API page](http://localhost:3000/api/) in your browser
 
-# Generate REST resources
+## Generate REST resources
 
 ```bash
 $ npx nest generate resource
@@ -257,7 +257,7 @@ $ npx nest generate resource
 
 - Open the [Swagger API page](http://localhost:3000/api/) in your browser
 
-# Import PrismaModule to the ArticlesModule
+## Import PrismaModule to the ArticlesModule
 
 ```ts
 // src/articles/articles.module.ts
@@ -266,13 +266,13 @@ $ npx nest generate resource
 })
 ```
 
-# Inject the PrismaService inside the ArticlesService and use it to access the database.
+## Inject the PrismaService inside the ArticlesService and use it to access the database.
 
 ```ts
 constructor(private prisma: PrismaService) {}
 ```
 
-## Update ArticlesService methods to updata and query from database
+### Update ArticlesService methods to updata and query from database
 
 ```ts
 // src/articles/articles.service.ts
@@ -305,7 +305,7 @@ export class ArticlesService {
   }
 ```
 
-## Group endpoints together in Swagger
+### Group endpoints together in Swagger
 
 - Add an @ApiTags decorator to the ArticlesController class, to group all the articles endpoints together in Swagger:
 
@@ -322,7 +322,7 @@ export class ArticlesController {
 
 - Open the [Swagger API page](http://localhost:3000/api/) in your browser
 
-## Update Swagger response types
+### Update Swagger response types
 
 - update the ArticleEntity class in the articles.entity.ts file as follows:
 

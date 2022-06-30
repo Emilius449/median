@@ -58,15 +58,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## About Project
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+This is a simple backend REST API with NestJS, Prisma, PostgreSQL and Swagger. There is a file (steps.md) explaing step by step to recreate this project.
 
 ## License
 
