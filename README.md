@@ -24,7 +24,8 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is a simple backend REST API with NestJS, Prisma, PostgreSQL and Swagger. There is a file (steps.md) explaing step by step to recreate this project.
+To follow along, you will be expected to have Node.js installed and Docker or PostgreSQL installed.
 
 ## Installation
 
@@ -57,10 +58,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## About Project
-
-This is a simple backend REST API with NestJS, Prisma, PostgreSQL and Swagger. There is a file (steps.md) explaing step by step to recreate this project.
 
 ## License
 
