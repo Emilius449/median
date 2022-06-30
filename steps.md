@@ -52,7 +52,7 @@ $ docker compose up -d
 - Configure Environment variables
 
 ```env
-DATABASE_URL="postgresql://postgres:123456@Aa@localhost:5432/medianDatabase?schema=public"
+DATABASE_URL=""
 ```
 
 # Install Prisma
